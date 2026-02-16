@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 5%;
+    --foreground: 210 40% 95%;
+
+    --card: 230 20% 10%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 230 20% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 199 100% 55%;
+    --primary-foreground: 230 25% 5%;
+
+    --secondary: 270 80% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 15% 15%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 145 80% 50%;
+    --accent-foreground: 230 25% 5%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 15% 18%;
+    --input: 230 15% 18%;
+    --ring: 199 100% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 230 20% 8%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 199 100% 55%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 230 15% 15%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 230 15% 18%;
+    --sidebar-ring: 199 100% 55%;
+
+    --neon-glow: 199 100% 55%;
+    --neon-purple: 270 80% 60%;
+    --neon-green: 145 80% 50%;
+
+    --glass-bg: 230 20% 12% / 0.6;
+    --glass-border: 210 40% 95% / 0.08;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-foreground/[0.08] shadow-lg;
+  }
+
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-foreground/[0.12] shadow-xl;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .neon-text-purple {
+    text-shadow: 0 0 10px hsl(var(--secondary) / 0.6), 0 0 40px hsl(var(--secondary) / 0.3);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.3), inset 0 0 15px hsl(var(--primary) / 0.05);
+  }
+
+  .neon-border-purple {
+    box-shadow: 0 0 15px hsl(var(--secondary) / 0.3), inset 0 0 15px hsl(var(--secondary) / 0.05);
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  /* 3D Flip Card Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
