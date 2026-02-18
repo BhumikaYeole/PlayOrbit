@@ -30,6 +30,15 @@ const userSchema = new mongoose.Schema(
       required: [true, "Please select user role"],
       lowercase: true,
     },
+    sportsInterested: [{ type: String }],
+
+    playerProfile: {
+      roleInSport: { type: String }, // striker, defender etc
+      totalMatchesPlayed: { type: Number, default: 0 },
+      requestsSent: [{ type: mongoose.Schema.Types.ObjectId, ref: "PlayerRequest" }],
+      requestsReceived: [{ type: mongoose.Schema.Types.ObjectId, ref: "PlayerRequest" }]
+    },
+
   },
   {
     timestamps: true,

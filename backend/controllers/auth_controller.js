@@ -1,4 +1,5 @@
 import User from "../models/user.js";
+import ProviderProfile from "../models/provider_profile.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET, JWT_EXPIRES_IN } from "../config/env.js";
@@ -29,6 +30,10 @@ export const signUpProvider = async (req, res, next) => {
       email,
       password: hashPassword,
       role: "provider",
+    });
+
+    const newProviderProfile = await ProviderProfile.create({
+      user: newUser._id,
     });
 
     // Generate token
