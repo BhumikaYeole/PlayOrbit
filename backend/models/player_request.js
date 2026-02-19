@@ -12,8 +12,6 @@ const playerRequestSchema = new mongoose.Schema({
     default: "pending" 
   },
 
-  message: { type: String },
-
   createdAt: { type: Date, default: Date.now }
 });
 

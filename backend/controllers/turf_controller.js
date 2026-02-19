@@ -129,4 +129,19 @@ export const getAllTurfs = async (req, res) => {
   }
 };
 
+export const getTurfByUserId = async (req, res) => {
+  try {
+    const userId = req.user.id; 
+    const provider = await ProviderProfile.findOne({ user: userId });   
+    if (!provider) {
+      return res.status(403).json({ message: "Only providers can access their turfs" });
+    }   
+    const turfs = await Turf.find({ provider: provider._id }).populate("provider", "name email");
+    res.json(turfs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  } 
+};
+
 

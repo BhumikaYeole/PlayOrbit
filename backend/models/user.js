@@ -36,7 +36,8 @@ const userSchema = new mongoose.Schema(
       roleInSport: { type: String }, // striker, defender etc
       totalMatchesPlayed: { type: Number, default: 0 },
       requestsSent: [{ type: mongoose.Schema.Types.ObjectId, ref: "PlayerRequest" }],
-      requestsReceived: [{ type: mongoose.Schema.Types.ObjectId, ref: "PlayerRequest" }]
+      requestsReceived: [{ type: mongoose.Schema.Types.ObjectId, ref: "PlayerRequest" }],
+      experienceLevel: { type: String, enum: ["beginner", "intermediate", "advanced"] , default: "beginner" },
     },
 
   },

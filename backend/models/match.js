@@ -19,6 +19,8 @@ const matchSchema = new mongoose.Schema({
     default: "open" 
   },
 
+  message : { type: String },
+
   createdAt: { type: Date, default: Date.now }
 });
 

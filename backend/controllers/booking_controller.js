@@ -1,6 +1,7 @@
 import Booking from "../models/booking.js";
 import Slot from "../models/slot.js";
 import Turf from "../models/turf.js";
+import mongoose from "mongoose";
 
 export const createBooking = async (req, res) => {
     try {
