@@ -59,8 +59,8 @@ MongoDB (Mongoose ODM)
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/playorbit.git
-cd playorbit
+git clone https://github.com/BhumikaYeole/PlayOrbit.git
+cd PlayOrbit
 ```
 
 Install dependencies:
